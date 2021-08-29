@@ -14,16 +14,16 @@ Knowledge about chronic conditions such as diabetes can inform clinical decision
 
 **Our approach:**
 
-- We took an ensemble learning approach, using a variety of classifiers like LightGBM, XGBoost, CatBoost and Deep Neural Networks. Final predictions were a weighted sum of the individual predictions, where the weights were chosen through validation.
-- We experimented with different methods of data cleaning and imputation, some of which are outlined below:
-  > Dropping features having more than a certain percentage of missing values
-  > Dropping one of a pair of numerical features if pair-wise correlation is greater than a threshold
-  > Dropping features with less than a certain number of unique values
-  > Considering missing values in categorical features as a separate category instead of replacing with the mode of the feature, which we saw improved our predictions
-  > Imputing missing age with average age of people in the United States
-  > Imputing missing features like height and weight according to gender instead of using overall means
-  > Imputing missing blood oxygen levels with standard values
-  > Calculating missing BMI using height and weight
-  > Adding new features, e.g. markers for low levels of creatinine, markers for high levels of billirubin/glucose/BMI, range/ratio features corresponding to min and max records       for lab tests, flags for liver disorders
-- For some base learners, we used SMOTE oversampling to balance the dataset.
-- For all classifiers, we implemented hyperparameter tuning with stratified K-fold cross-validation to select the best model.
+* We took an ensemble learning approach, using a variety of classifiers like LightGBM, XGBoost, CatBoost and Deep Neural Networks. Final predictions were a weighted sum of the individual predictions, where the weights were chosen through validation.
+* We experimented with different methods of data cleaning and imputation, some of which are outlined below:
+  - Dropping features having more than a certain percentage of missing values
+  - Dropping one of a pair of numerical features if pair-wise correlation is greater than a threshold
+  - Dropping features with less than a certain number of unique values
+  - Considering missing values in categorical features as a separate category instead of replacing with the mode of the feature, which we saw improved our predictions
+  - Imputing missing age with average age of people in the United States
+  - Imputing missing features like height and weight according to gender instead of using overall means
+  - Imputing missing blood oxygen levels with standard values
+  - Calculating missing BMI using height and weight
+  - Adding new features, e.g. markers for low levels of creatinine, markers for high levels of billirubin/glucose/BMI, range/ratio features corresponding to min and max records       for lab tests, flags for liver disorders
+* For some base learners, we used SMOTE oversampling to balance the dataset.
+* For all classifiers, we implemented hyperparameter tuning with stratified K-fold cross-validation to select the best model.
